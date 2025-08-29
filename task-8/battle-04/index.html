@@ -1,0 +1,40 @@
+<div></div>
+
+<style>
+  body {
+    background: #B6EBE7;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  div {
+    width: 200px;
+    height: 60px;
+    background: #3A335A;
+    position: relative;
+    top: -102px;
+    left: -83px;
+  }
+  div::before, div::after {
+    content: '';
+    background: #3A335A;
+    position: absolute;
+  }
+
+  div::before {
+    width: 35px;
+    height: 108px;
+    top: 78px;
+    left: 165px;
+  }
+  
+  div::after {
+    width: 200px;
+    height: 60px;
+    top: 204px;
+    left: 165px;
+  }
+</style>
+

@@ -1,0 +1,56 @@
+<div class="main"></div>
+<div class="gap"></div>
+<style>
+  body {
+  margin: 0;
+  display: grid;
+  justify-content:center;
+  align-items:center;  
+  background: #3F4869; 
+}
+
+.main {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  background: #E25C57; 
+  border-radius: 50% 0% 50% 50%;
+  top:40;
+  
+}
+  .main::before{
+    position:absolute;
+  content:'';
+  background:#3F4869;
+  width:80px;
+    height:80px;
+    top:30;
+    left:30;
+    border-radius:50%
+    
+    
+  }
+  .main::after{
+    content:'';
+    position:absolute;
+    height:40px;
+    width:10px;
+    background:#3F4869;
+    left:70px;
+    }
+
+ .gap{
+   position:relative;
+   background:#3F4869;
+   height:10px;
+   width:40px;
+   left:100;
+   top:-95;
+   
+   
+ } 
+
+  
+  
+</style>
+

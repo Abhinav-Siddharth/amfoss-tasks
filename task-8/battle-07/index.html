@@ -1,0 +1,41 @@
+<div ></div>
+<style>
+  body{
+    background:#3A335A;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:0;
+    
+  }
+  div{
+    width:140px;
+    height:30px;
+    background:#FFFFFF;
+    position:relative;
+    box-shadow:0 70px #FFFFFF,0 -70px #FFFFFF;
+    
+  }
+  div::before, div::after{
+    content:'';
+    position:absolute;
+    width:140px;
+    height:30px;
+    transform-origin:center center;
+    margin-top:45px;
+
+  }
+  div::before{
+      box-shadow:-165px -0px #FFFFFF, -165px -70px #FFFFFF, -165px 70px #FFFFFF;
+transform:rotate(15deg);
+    margin-left:-10px;
+    
+    
+  }
+
+  div::after{
+    box-shadow:165px 0px #FFFFFF, 165px 70px #FFFFFF, 165px -70px #FFFFFF;
+    transform:rotate(-15deg);
+  margin-left:10px;
+  }
+</style>

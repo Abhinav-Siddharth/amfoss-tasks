@@ -1,0 +1,42 @@
+<div>
+  <style>
+    body{
+      background:#FFFFFF;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0;
+    }   
+div{
+  position:relative;
+  background:#9E8DEC;
+  width:280px;
+  height:110px;
+  top:55;
+  border-radius:10px;
+      
+}
+    div::before{
+      content:'';
+      position:absolute;
+      background:#6855BF;
+      width:240;
+      height:100;
+      left:20;
+      top:-40;
+      border-radius:10px;
+      z-index:-1
+      }
+    div::after{
+      content:'';
+      background:#5528A5;
+      position:absolute;
+      width:200px;
+      height:100px;
+      left:40;
+      top:-80;
+      border-radius:10px;
+      z-index:-2;
+    }
+  </style>
+</div>
