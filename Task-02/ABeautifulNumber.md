@@ -1,3 +1,4 @@
+```bash
 t=int(input())
 
 for a in range(t):
