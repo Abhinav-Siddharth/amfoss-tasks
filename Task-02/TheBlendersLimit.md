@@ -2,11 +2,11 @@
 
 import math
 
-t=int(input())
+t = int(input())
 
 for a in range(t):
-    n=int(input())
-    x, y=map(int, input().split())
+    n = int(input())
+    x, y = map(int, input().split())
     
     time_to_load = math.ceil(n/y)
     

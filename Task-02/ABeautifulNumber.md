@@ -1,8 +1,8 @@
 ```bash
-t=int(input())
+t = int(input())
 
 for a in range(t):
-    s=list(map(int, input().strip()))
+    s = list(map(int, input().strip()))
     s.sort()
     
     result = []
