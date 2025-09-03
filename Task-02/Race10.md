@@ -1,3 +1,5 @@
+```bash
+
 t = int(input())
 for _ in range(t):
     a, x, y = map(int, input().split())

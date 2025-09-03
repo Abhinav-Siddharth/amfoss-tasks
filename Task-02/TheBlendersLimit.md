@@ -1,3 +1,5 @@
+```bash
+
 import math
 
 t=int(input())
