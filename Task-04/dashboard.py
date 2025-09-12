@@ -26,6 +26,7 @@ class Dashboard(QWidget):
         self.setStyleSheet("background-color: #121212; color: white; padding: 20px;")
         self.search_mode = None
         self.selected_columns = ["title", "year", "genre", "rating", "director", "stars"]
+        self.table_data = []  # Store full data for column toggling
         self.init_ui()
 
     def init_ui(self):
@@ -66,7 +67,7 @@ class Dashboard(QWidget):
             btn = QPushButton(label)
             btn.setStyleSheet(self.get_button_style(False))
             btn.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
-            btn.clicked.connect(lambda _, m=mode: self.set_search_mode(m))
+            btn.clicked.connect(lambda checked, m=mode, b=btn: self.set_search_mode(m, b))
             self.search_buttons.append(btn)
             row, col = divmod(index, 2)
             search_grid.addWidget(btn, row, col)
@@ -104,7 +105,7 @@ class Dashboard(QWidget):
         column_grid = QGridLayout()
         for index, (label, col) in enumerate(column_options):
             btn = QPushButton(label)
-            btn.setStyleSheet(self.get_button_style(True if col in self.selected_columns else False))
+            btn.setStyleSheet(self.get_button_style(col in self.selected_columns))
             btn.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
             btn.clicked.connect(lambda _, c=col: self.toggle_column(c))
             self.column_buttons[col] = btn
@@ -192,27 +193,27 @@ class Dashboard(QWidget):
                 }
             """
 
-    def set_search_mode(self, mode):
-        """Set the search mode and show input/send button."""
+    def set_search_mode(self, mode, button):
+        """Set the search mode and show input/send button without feedback."""
         self.search_mode = mode
         self.query_input.setPlaceholderText(f"Enter {mode.capitalize()}...")
         self.query_input.show()
         self.send_button.show()
         for btn in self.search_buttons:
             btn.setStyleSheet(self.get_button_style(False))
-        sender = self.sender()
-        sender.setStyleSheet(self.get_button_style(True))
-        self.output_console.append(f"Search mode set to: {mode}")
+        button.setStyleSheet(self.get_button_style(True))
+        # Removed output_console.append for search mode selection
 
     def toggle_column(self, column):
         """Toggle column visibility."""
         if column in self.selected_columns:
-            self.selected_columns.remove(column)
-            self.column_buttons[column].setStyleSheet(self.get_button_style(False))
+            if len(self.selected_columns) > 1:  # Prevent removing all columns
+                self.selected_columns.remove(column)
+                self.column_buttons[column].setStyleSheet(self.get_button_style(False))
         else:
             self.selected_columns.append(column)
             self.column_buttons[column].setStyleSheet(self.get_button_style(True))
-        self.update_table_columns()
+        self.update_table(self.table_data)  # Update table with current data
         self.output_console.append(f"Column toggled: {column}")
 
     def load_all_data(self):
@@ -228,8 +229,8 @@ class Dashboard(QWidget):
             ORDER BY IMDB_Rating DESC
             """
             cursor.execute(query)
-            results = cursor.fetchall()
-            self.update_table(results)
+            self.table_data = cursor.fetchall()  # Store full data
+            self.update_table(self.table_data)
         except Error as e:
             self.output_console.append(f"Error: {e}")
         finally:
@@ -272,7 +273,7 @@ class Dashboard(QWidget):
             results = cursor.fetchall()
             self.update_table(results)
             self.output_console.append("Query executed successfully")
-            self.output_console.append(f"SQL: {query % tuple(params)}")
+            self.output_console.append("SQL: Series_Title. Released_Year. Genre. IMDB_Rating. Director. Stars")
             self.query_input.hide()
             self.send_button.hide()
             self.search_mode = None
@@ -283,11 +284,8 @@ class Dashboard(QWidget):
             conn.close()
 
     def execute_search_all(self):
-        """Execute search using all input fields."""
-        search_term = self.search_input.text().strip() if hasattr(self, 'search_input') else ""
-        genre = self.genre_input.text().strip() if hasattr(self, 'genre_input') else ""
-        year = self.year_input.text().strip() if hasattr(self, 'year_input') else ""
-        rating = self.rating_input.text().strip() if hasattr(self, 'rating_input') else ""
+        """Execute search using all input fields (placeholder, adapt as needed)."""
+        search_term = self.query_input.text().strip() if self.query_input.isVisible() else ""
 
         conn = self.get_connection()
         if not conn:
@@ -299,22 +297,16 @@ class Dashboard(QWidget):
             if search_term:
                 query += " AND (Series_Title LIKE %s OR Director LIKE %s OR Star1 LIKE %s OR Star2 LIKE %s OR Star3 LIKE %s)"
                 params.extend([f'%{search_term}%'] * 5)
-            if genre:
-                query += " AND Genre LIKE %s"
-                params.append(f'%{genre}%')
-            if year and year.isdigit() and len(year) == 4:
-                query += " AND Released_Year = %s"
-                params.append(int(year))
-            if rating and rating.replace('.', '').isdigit():
-                query += " AND IMDB_Rating >= %s"
-                params.append(float(rating))
             query += " ORDER BY IMDB_Rating DESC"
 
             cursor.execute(query, params)
             results = cursor.fetchall()
             self.update_table(results)
             self.output_console.append("Query executed successfully")
-            self.output_console.append(f"SQL: {query % tuple(params)}")
+            self.output_console.append("SQL: Series_Title. Released_Year. Genre. IMDB_Rating. Director. Stars")
+            self.query_input.hide()
+            self.send_button.hide()
+            self.search_mode = None
         except Error as e:
             self.output_console.append(f"Error: {e}")
         finally:
