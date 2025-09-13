@@ -10,11 +10,10 @@ import mysql.connector
 from mysql.connector import Error
 import csv
 
-# Database config
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'password123',  # Replace with your MySQL password
+    'password': 'password123', 
     'database': 'cinemovies'
 }
 
@@ -34,7 +33,7 @@ class Dashboard(QWidget):
         main_layout.setContentsMargins(20, 20, 20, 20)
         main_layout.setSpacing(10)
 
-        # Header
+     
         header = QLabel("🎬 CineScope Dashboard")
         header.setFont(QFont("Arial", 24, QFont.Bold))
         header.setAlignment(Qt.AlignCenter)
@@ -43,12 +42,12 @@ class Dashboard(QWidget):
 
         split_layout = QHBoxLayout()
 
-        # Left Panel
+     
         left_container = QVBoxLayout()
         left_container.setSpacing(10)
         left_container.setAlignment(Qt.AlignTop)
 
-        # Search buttons
+       
         search_heading = QLabel("Search By")
         search_heading.setFont(QFont("Arial", 18, QFont.Bold))
         left_container.addWidget(search_heading)
@@ -73,21 +72,21 @@ class Dashboard(QWidget):
             search_grid.addWidget(btn, row, col)
         left_container.addLayout(search_grid)
 
-        # Search input
+       
         self.query_input = QLineEdit()
         self.query_input.setPlaceholderText("Enter search term")
         self.query_input.setStyleSheet("background-color: #1e1e1e; color: white; padding: 5px; border: 1px solid #444;")
-        self.query_input.hide()  # Hidden until search mode is set
+        self.query_input.hide()  
         left_container.addWidget(self.query_input)
 
-        # Send button for search
+        
         self.send_button = QPushButton("Send")
         self.send_button.setStyleSheet("background-color: #e50914; color: white; padding: 6px; border-radius: 5px;")
         self.send_button.clicked.connect(self.execute_search)
-        self.send_button.hide()  # Hidden until search mode is set
+        self.send_button.hide()  
         left_container.addWidget(self.send_button)
 
-        # Column selection
+
         column_heading = QLabel("Select Columns")
         column_heading.setFont(QFont("Arial", 18, QFont.Bold))
         left_container.addWidget(column_heading)
@@ -113,7 +112,6 @@ class Dashboard(QWidget):
             column_grid.addWidget(btn, row, col)
         left_container.addLayout(column_grid)
 
-        # Action buttons
         action_layout = QHBoxLayout()
         search_btn = QPushButton("Search All")
         search_btn.setStyleSheet("background-color: #e50914; color: white; padding: 6px; border-radius: 5px;")
@@ -126,11 +124,11 @@ class Dashboard(QWidget):
         action_layout.addWidget(export_btn)
         left_container.addLayout(action_layout)
 
-        # Right Panel
+       
         right_side_layout = QVBoxLayout()
         right_side_layout.setSpacing(10)
 
-        # Table
+       
         self.table = QTableWidget()
         self.table.setStyleSheet("""
             QTableWidget {
@@ -148,7 +146,7 @@ class Dashboard(QWidget):
         self.table.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
         right_side_layout.addWidget(self.table)
 
-        # Output console
+      
         self.output_console = QTextEdit()
         self.output_console.setPlaceholderText("Results will appear here...")
         self.output_console.setStyleSheet("""
@@ -167,7 +165,7 @@ class Dashboard(QWidget):
         main_layout.addLayout(split_layout)
         self.setLayout(main_layout)
 
-        # Load initial data
+       
         self.load_all_data()
 
     def get_button_style(self, is_selected):
@@ -202,18 +200,18 @@ class Dashboard(QWidget):
         for btn in self.search_buttons:
             btn.setStyleSheet(self.get_button_style(False))
         button.setStyleSheet(self.get_button_style(True))
-        # Removed output_console.append for search mode selection
+      
 
     def toggle_column(self, column):
         """Toggle column visibility."""
         if column in self.selected_columns:
-            if len(self.selected_columns) > 1:  # Prevent removing all columns
+            if len(self.selected_columns) > 1:
                 self.selected_columns.remove(column)
                 self.column_buttons[column].setStyleSheet(self.get_button_style(False))
         else:
             self.selected_columns.append(column)
             self.column_buttons[column].setStyleSheet(self.get_button_style(True))
-        self.update_table(self.table_data)  # Update table with current data
+        self.update_table(self.table_data)  
         self.output_console.append(f"Column toggled: {column}")
 
     def load_all_data(self):
@@ -229,7 +227,7 @@ class Dashboard(QWidget):
             ORDER BY IMDB_Rating DESC
             """
             cursor.execute(query)
-            self.table_data = cursor.fetchall()  # Store full data
+            self.table_data = cursor.fetchall() 
             self.update_table(self.table_data)
         except Error as e:
             self.output_console.append(f"Error: {e}")
