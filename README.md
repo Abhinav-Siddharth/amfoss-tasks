@@ -19,7 +19,7 @@ I might not be the smartest one in the room but I guarantee that I'll be the one
 
 ## **How do you intend to contribute back to the club?**
 
-I have a natural interest in helping people, could be juniors or peers, I'm always open to support them. Also I'd love to participate in hackathons, win and get the pride !! Also parallely contributing to OSS
+I have a natural interest in helping people, could be juniors or peers, I'm always open to support them. Also I'd love to participate in hackathons, win and get the pride !! Also contributing to OSS ain't gonna stop.
 
 ## **What are your fields of interest, and how do you plan on working on them?**
 
