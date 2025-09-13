@@ -24,3 +24,18 @@ I have a natural interest in helping people, could be juniors or peers, I'm alwa
 ## **What are your fields of interest, and how do you plan on working on them?**
 
 I'd like to do stuff that aligns with my major (Robotics and AI) and stacking it with a strong knowledge of OSS which is the Foundation of lot of AI/robotics softwares and ROS is one of the software I really want to explore. Before all yeah mainly I want to learn more about OSS, keep on building skills and contribute to the club!
+
+# TASK STATUS
+| Tasks | Description | Status |
+| :-:       | :-:         | :-:    |
+| Task-00   | - | Completed |
+| Task-01   | [Terminal Wizard](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-01) | Completed |
+| Task-02   | [CodeRush: Global Offensive](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-02) | Completed |
+| Task-03   | [Circularity Challenge Pro](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-03) | Completed |
+| Task-04   | [CineScope Advanced](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-04)  | Completed |
+| Task-05   | [TimeTickQuiz v2](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-05) | Completed |
+| Task-06   | [Friendly Neighborhood Bot](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-06) | Completed |
+| Task-07   | [WordRush+ Mobile app](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-07) | Mild attempt |
+| Task-08   | [CSS Master](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-08) | Completed |
+| Task-09   | [SysForge Mastery](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-09)| Not attempted |
+| Task-10   | [OpenCV Treasure Map](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-10)| Completed |
