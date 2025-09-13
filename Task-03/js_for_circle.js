@@ -32,13 +32,13 @@ modeSelect.addEventListener('change', (e) => {
     currentMode = e.target.value;
     if (currentMode === 'easy') {
         dotSize = 20;
-        tolerance = 0.3; // More forgiving
+        tolerance = 0.3; 
     } else if (currentMode === 'medium') {
         dotSize = 10;
-        tolerance = 0.2; // Balanced
+        tolerance = 0.2; 
     } else if (currentMode === 'hardcore') {
         dotSize = 5;
-        tolerance = 0.12; // Slightly easier
+        tolerance = 0.12; 
     }
     resetCanvas();
 });
@@ -88,7 +88,6 @@ canvas.addEventListener('mouseup', () => {
     const endTime = Date.now();
     const drawTime = (endTime - startTime) / 1000;
     
-    // Check if center is inside the drawn path
     ctx.beginPath();
     ctx.moveTo(points[0].x, points[0].y);
     for (let i = 1; i < points.length; i++) {
@@ -100,13 +99,11 @@ canvas.addEventListener('mouseup', () => {
         return;
     }
     
-    // Require at least 20 points for a valid circle
     if (points.length < 20) {
         errorMsg.textContent = 'Draw a full circle!';
         return;
     }
-    
-    // Calculate distances to center
+  
     let distances = [];
     for (let point of points) {
         const dx = point.x - centerX;
@@ -114,13 +111,12 @@ canvas.addEventListener('mouseup', () => {
         distances.push(Math.sqrt(dx * dx + dy * dy));
     }
     
-    // New scoring: Use average deviation with steeper penalty
     const avgRadius = distances.reduce((a, b) => a + b, 0) / distances.length;
     const avgDeviation = distances.reduce((sum, dist) => sum + Math.abs(dist - avgRadius), 0) / distances.length;
-    // Score: 100 - (avgDeviation / avgRadius) * 150 / tolerance for steeper drop-off
+   
     let score = Math.max(0, 100 - (avgDeviation / avgRadius) * 150 / tolerance);
     
-    // Time bonus: Up to 20% for fast draws (under 5 sec)
+   
     const timeBonus = Math.max(0, 20 - drawTime * 4);
     score = Math.min(100, score + timeBonus);
     score = Math.round(score);
