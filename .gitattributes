@@ -1,1 +1,0 @@
-Task-04/venv/lib/python3.10/site-packages/PySide6/lupdate filter=lfs diff=lfs merge=lfs -text
