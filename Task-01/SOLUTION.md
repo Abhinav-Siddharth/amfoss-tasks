@@ -43,3 +43,5 @@ x = '7' and y = '4'
 
 Got the final code and made finalcode.txt and deleted all part codes and yeah its done!!!
 
+Took me quite a while as I'm totally new to the terminal but it has been fun figuring stuff out and yeah enjoyed it all the way till the end and the congratulations message couldn't have been more satisfying!!!!
+
