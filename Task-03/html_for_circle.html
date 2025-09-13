@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Draw a Perfect Circle</title>
+    <link rel="stylesheet" href="css_for_circle.css">
+</head>
+<body class="light-mode">
+    <h1>Draw a Perfect Circle</h1>
+    <p>Draw around the red dot. Release mouse to score!</p>
+    
+    <div id="controls">
+        <select id="mode-select">
+            <option value="easy">Easy</option>
+            <option value="medium" selected>Medium</option>
+            <option value="hardcore">Hardcore</option>
+        </select>
+        <button id="reset-btn">Reset</button>
+        <button id="theme-toggle">Toggle Dark Mode</button>
+    </div>
+    
+    <canvas id="canvas" width="600" height="600"></canvas>
+    
+    <div id="score-display">Score: --</div>
+    <div id="best-score">Best Score: --</div>
+    <div id="error-msg"></div>
+    
+    <audio id="draw-sound" loop>
+        <source src="draw.mp3" type="audio/mpeg">
+    </audio>
+    
+    <script src="js_for_circle.js"></script>
+</body>
+</html>

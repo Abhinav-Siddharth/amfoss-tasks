@@ -1,0 +1,60 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.light-mode {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #fff;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+#controls {
+    margin-bottom: 20px;
+}
+
+#controls select, #controls button {
+    padding: 10px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#canvas {
+    border: 2px solid #000;
+    background-color: #fff;
+    cursor: crosshair;
+    touch-action: none;
+}
+
+#score-display, #best-score, #error-msg {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+#error-msg {
+    color: red;
+}
+
+.dark-mode #canvas {
+    border-color: #fff;
+    background-color: #444;
+}
