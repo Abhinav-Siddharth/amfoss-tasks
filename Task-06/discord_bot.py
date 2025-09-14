@@ -100,4 +100,4 @@ async def wisdom(ctx, topic):
         await ctx.send("❌ Unknown topic. Available: rules, resources, contact.")
 
 
-bot.run('MTQxMjExMzA3NzY3OTQyNzY2NA.G_oNbV.x77yVl4H-G8OzBUK8gQIejrEcHCFgQMmHmV8PE')
+bot.run('<bot-token>')
