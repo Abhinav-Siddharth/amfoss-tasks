@@ -12,6 +12,8 @@ It's not a great number given the ample amount of time but for a beginner as me,
 
 Overall I'm quite positve at the moment and I'm ready to tackle anything which comes on way and looking forward to be the same -- I will be!!!
 
+And yeah initially i struggled using just google to learn stuff because I had to go through many links and websites to get a good learning resource so as a developer I feel like as long as you are using AI to **learn**  it is absolutely fine and good as you just boost your learning speed and it really comes in handy!!
+
 
 ## **Why should we choose you?**
 
