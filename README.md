@@ -2,7 +2,7 @@
 ---
 ## ABOUT ME
 
-I'm Abhinav Siddharth, an S3 RAE applicant. There might not be many applying from my branch but yeah I've got my reasons. I've tried applying for S2 recruitment but by the time the message came in our class group it was over and I immediately sent amfoss a mail but yeah couldn't have done anything.
+I'm Abhinav Siddharth, an S3 RAE applicant. There might not be many applying from my branch but yeah I've got my reasons. I've tried applying for S2 recruitment but it was over and I immediately sent amfoss a mail but yeah couldn't have done anything.
 
 Now this is the only chance for me to get in so I've done stuff I've never done before, staying locked in consistently for over a whole month!!! That's a whole acheivement by itself and I'm proud of that really. I saw unreal dedication waking earlier and working with confidence and insane productivity. 
 
