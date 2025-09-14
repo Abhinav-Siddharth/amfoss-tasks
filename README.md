@@ -40,4 +40,4 @@ I'd like to do stuff that aligns with my major (Robotics and AI) and stacking it
 | Task-07   | [WordRush+ Mobile app](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-07) | Mild attempt |
 | Task-08   | [CSS Master](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-08) | Completed |
 | Task-09   | [SysForge Mastery](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-09)| Not attempted |
-| Task-10   | [OpenCV Treasure Map](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-10)| Attemped |
+| Task-10   | [OpenCV Treasure Map](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-10)| Partially done |
