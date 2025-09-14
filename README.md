@@ -30,7 +30,7 @@ I'd like to do stuff that aligns with my major (Robotics and AI) and stacking it
 # TASK STATUS
 | Tasks | Description | Status |
 | :-:       | :-:         | :-:    |
-| Task-00   | - | Completed |
+| Task-00   | Install Linux | Completed |
 | Task-01   | [Terminal Wizard](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-01) | Completed |
 | Task-02   | [CodeRush: Global Offensive](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-02) | Completed |
 | Task-03   | [Circularity Challenge Pro](https://github.com/Abhinav-Siddharth/amfoss-tasks/tree/main/Task-03) | Completed |
