@@ -96,7 +96,7 @@ def create_treasure_map(image_files):
 
 # Main execution
 def main():
-    folder_path = "assets"  # Adjust to your folder path
+    folder_path = "assets"  # Adjust if assets is elsewhere
     image_files = get_sorted_images(folder_path)
     if not image_files:
         print("No images found in the assets folder!")
