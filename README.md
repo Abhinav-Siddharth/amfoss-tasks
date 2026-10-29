@@ -17,7 +17,7 @@ And yeah initially i struggled using just google to learn stuff because I had to
 
 ## **Why should we choose you?**
 
-I might not be the smartest one in the room but I guarantee that I'll be the one grinding hard even if others quit (you can have my word right there) and I know for a fact that once I get into amFOSS it's only getting better...
+I might not be the smartest one in the room but I guarantee that I'll be the one grinding hard even if others quit and I know for a fact that once I get into amFOSS it's only getting better...
 
 ## **How do you intend to contribute back to the club?**
 
